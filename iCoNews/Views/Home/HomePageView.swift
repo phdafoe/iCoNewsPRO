@@ -11,6 +11,7 @@ struct HomePageView: View {
     
     @StateObject var viewModel = HomePagePresenter()
     @State private var presentModal = false
+    @State private var selectedLink: Item?
     
     var body: some View {
         NavigationStack{
@@ -68,13 +69,14 @@ struct HomePageView: View {
                     .bold()
                 Button() {
                     self.presentModal.toggle()
+                    self.selectedLink = item
                 } label: {
                     Image(systemName: "network")
                         .font(.subheadline)
                         .foregroundColor(.gray)
                 }
-                .sheet(isPresented: self.$presentModal, content: {
-                    SafariView(url: URL(string: item.link ?? "")!)
+                .sheet(item: self.$selectedLink, content: { link in
+                    SafariView(url: URL(string: link.link ?? "")!)
                 })
             }
             .padding()
