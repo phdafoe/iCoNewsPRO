@@ -1,5 +1,5 @@
 //
-//  HomePageView.swift
+//  BusinessView.swift
 //  iCoNews
 //
 //  Created by TECDATA ENGINEERING on 12/11/22.
@@ -7,20 +7,20 @@
 
 import SwiftUI
 
-struct HomePageView: View {
+struct BusinessView: View {
     
-    @StateObject var viewModel = HomePagePresenter()
+    @StateObject var viewModel = BusinessPresenter()
     @State private var presentModal = false
     
     var body: some View {
         NavigationStack{
             ScrollView {
                 ForEach(self.viewModel.arrayItems) { item in
-                    headerHomePageView(item: item)
+                    headerBusinessPageView(item: item)
                         .loader(state: .ok)
                 }
             }
-            .navigationTitle(Text("Home Page - NYT"))
+            .navigationTitle(Text("Business - NYT"))
             .onAppear {
                 self.viewModel.fetchData()
             }
@@ -28,7 +28,7 @@ struct HomePageView: View {
     }
     
     @ViewBuilder
-    func headerHomePageView(item: Item) -> some View {
+    func headerBusinessPageView(item: Item) -> some View {
         VStack(alignment: .leading, spacing: 20){
             Divider()
             Text(item.title ?? "")
@@ -41,12 +41,12 @@ struct HomePageView: View {
             Text(item.itemDescription ?? "")
                 .font(.title3)
             
-            contentHomePageView(item: item)
+            contentBusinessPageView(item: item)
         }.padding(EdgeInsets(top: 2, leading: 5, bottom: 5, trailing: 2))
     }
     
     @ViewBuilder
-    func contentHomePageView(item: Item) -> some View{
+    func contentBusinessPageView(item: Item) -> some View{
         
         HStack(alignment: .bottom) {
             VStack(alignment: .leading, spacing: 5){
@@ -76,6 +76,7 @@ struct HomePageView: View {
                 .sheet(isPresented: self.$presentModal, content: {
                     SafariView(url: URL(string: item.link ?? "")!)
                 })
+                
             }
             .padding()
             Spacer()
@@ -87,8 +88,8 @@ struct HomePageView: View {
     }
 }
 
-struct HomePageView_Previews: PreviewProvider {
+struct BusinessView_Previews: PreviewProvider {
     static var previews: some View {
-        HomePageView()
+        BusinessView()
     }
 }

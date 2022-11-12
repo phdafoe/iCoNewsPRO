@@ -15,8 +15,8 @@ final class HomeViewModel: ObservableObject {
         TabItemViewModel(imageName: "house.circle.fill", title: "HomePage", type: .homePage),
         TabItemViewModel(imageName: "photo.artframe", title: "Arts", type: .arts),
         TabItemViewModel(imageName: "bahtsign.circle", title: "Business", type: .business),
-        TabItemViewModel(imageName: "tv.circle.fill", title: "Movies", type: .movies),
-        TabItemViewModel(imageName: "gear", title: "Technology", type: .technology)
+        TabItemViewModel(imageName: "gear", title: "Technology", type: .movies),
+        TabItemViewModel(imageName: "info.circle", title: "More", type: .technology)
         
     ]
 }

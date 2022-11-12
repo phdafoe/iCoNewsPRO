@@ -69,7 +69,7 @@ struct ArtsView: View {
                 .sheet(isPresented: self.$presentModal, content: {
                     SafariView(url: URL(string: item.link ?? "")!)
                 })
-                .padding([.bottom, .top])
+               
             }
             .padding()
             Spacer()

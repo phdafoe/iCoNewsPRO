@@ -94,30 +94,41 @@ struct Item: Codable, Identifiable {
 class FeedParser: NSObject {
     
     private var rssItems: [Item] = []
+    
     private var currentElement = ""
+    
     private var currentLink = "" {
         didSet{
-            currentLink = currentLink.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+            currentLink = currentLink
+                .trimmingCharacters(in: CharacterSet
+                    .whitespacesAndNewlines)
         }
     }
     private var currentCredit = "" {
         didSet{
-            currentCredit = currentCredit.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+            currentCredit = currentCredit
+                .trimmingCharacters(in: CharacterSet
+                    .whitespacesAndNewlines)
         }
     }
     private var currentCreator = "" {
         didSet{
-            currentCreator = currentCreator.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+            currentCreator = currentCreator
+                .trimmingCharacters(in: CharacterSet
+                    .whitespacesAndNewlines)
         }
     }
     private var currentTitle = "" {
         didSet{
-            currentTitle = currentTitle.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+            currentTitle = currentTitle
+                .trimmingCharacters(in: CharacterSet
+                    .whitespacesAndNewlines)
         }
     }
     private var currentDescription = ""{
         didSet{
-            currentDescription = currentDescription.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+            currentDescription = currentDescription
+                .trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         }
     }
     private var currentPubDate = "" {
@@ -125,11 +136,11 @@ class FeedParser: NSObject {
             currentPubDate = currentPubDate.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         }
     }
+    
     private var parserCompletionHandler: (([Item]) -> Void)?
     
     func parseFeed(pUrl: String, completionHanndler: (([Item]) -> Void)?) {
         self.parserCompletionHandler = completionHanndler
-        
         let request = URLRequest(url: URL(string: pUrl)!)
         let urlsession = URLSession.shared
         urlsession.dataTask(with: request) { data, response, error in

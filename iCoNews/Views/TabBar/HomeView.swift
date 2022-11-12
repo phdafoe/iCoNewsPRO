@@ -35,11 +35,11 @@ struct HomeView: View {
         case .arts:
             ArtsView()
         case .business:
-            ContentView()
+            BusinessView()
         case .movies:
-            ContentView()
+            TechnologyView()
         case .technology:
-            ContentView()
+            MoreView()
         }
     }
 }
