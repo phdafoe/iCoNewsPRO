@@ -35,7 +35,7 @@ struct Channel: Codable {
     let copyright: String?
     let lastBuildDate: String?
     let pubDate: String?
-    let image: Image?
+    let image: ImageRss?
     let item: [Item]?
 
     enum CodingKeys: String, CodingKey {
@@ -52,7 +52,7 @@ struct Channel: Codable {
 }
 
 // MARK: - Image
-struct Image: Codable {
+struct ImageRss: Codable {
     let title: String?
     let url: String?
     let link: String?
