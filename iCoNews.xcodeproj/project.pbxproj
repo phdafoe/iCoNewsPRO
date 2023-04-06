@@ -26,6 +26,11 @@
 		F60C25B3291FEF5D005E5DE7 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60C25B2291FEF5D005E5DE7 /* MoreView.swift */; };
 		F60C25B6291FF0A6005E5DE7 /* WorldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60C25B5291FF0A6005E5DE7 /* WorldView.swift */; };
 		F60C25BA291FF103005E5DE7 /* WorldPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60C25B9291FF103005E5DE7 /* WorldPresenter.swift */; };
+		F6C8086A29DEB6E000F649A3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8086929DEB6E000F649A3 /* NetworkError.swift */; };
+		F6C8086C29DEB70B00F649A3 /* NetworkRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8086B29DEB70B00F649A3 /* NetworkRequestable.swift */; };
+		F6C8086E29DEB7A500F649A3 /* RequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8086D29DEB7A500F649A3 /* RequestModel.swift */; };
+		F6C8087029DEB7E200F649A3 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8086F29DEB7E200F649A3 /* Service.swift */; };
+		F6C8087229DEB8E000F649A3 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8087129DEB8E000F649A3 /* Logger.swift */; };
 		F6F5E6192917C814005B3C46 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F5E6182917C814005B3C46 /* HomeView.swift */; };
 		F6F5E61B2917C840005B3C46 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F5E61A2917C840005B3C46 /* HomeViewModel.swift */; };
 		F6F5E61E2917CDB6005B3C46 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F5E61D2917CDB6005B3C46 /* SafariView.swift */; };
@@ -52,6 +57,11 @@
 		F60C25B2291FEF5D005E5DE7 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
 		F60C25B5291FF0A6005E5DE7 /* WorldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldView.swift; sourceTree = "<group>"; };
 		F60C25B9291FF103005E5DE7 /* WorldPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldPresenter.swift; sourceTree = "<group>"; };
+		F6C8086929DEB6E000F649A3 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		F6C8086B29DEB70B00F649A3 /* NetworkRequestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestable.swift; sourceTree = "<group>"; };
+		F6C8086D29DEB7A500F649A3 /* RequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestModel.swift; sourceTree = "<group>"; };
+		F6C8086F29DEB7E200F649A3 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		F6C8087129DEB8E000F649A3 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		F6F5E6182917C814005B3C46 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F6F5E61A2917C840005B3C46 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F6F5E61D2917CDB6005B3C46 /* SafariView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
@@ -87,6 +97,7 @@
 		F6020FF22912B38400DDF2F4 /* iCoNews */ = {
 			isa = PBXGroup;
 			children = (
+				F6C8086829DEB6C900F649A3 /* ServiceLayer */,
 				F60C25A5291FE54F005E5DE7 /* Utils */,
 				F60C25A2291FE4F5005E5DE7 /* Modifiers */,
 				F60C259F291FE4DB005E5DE7 /* Components */,
@@ -180,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				F60C25A6291FE559005E5DE7 /* Utils.swift */,
+				F6C8087129DEB8E000F649A3 /* Logger.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -191,6 +203,17 @@
 				F60C25B9291FF103005E5DE7 /* WorldPresenter.swift */,
 			);
 			path = World;
+			sourceTree = "<group>";
+		};
+		F6C8086829DEB6C900F649A3 /* ServiceLayer */ = {
+			isa = PBXGroup;
+			children = (
+				F6C8086929DEB6E000F649A3 /* NetworkError.swift */,
+				F6C8086B29DEB70B00F649A3 /* NetworkRequestable.swift */,
+				F6C8086D29DEB7A500F649A3 /* RequestModel.swift */,
+				F6C8086F29DEB7E200F649A3 /* Service.swift */,
+			);
+			path = ServiceLayer;
 			sourceTree = "<group>";
 		};
 		F6F5E6162917C7F8005B3C46 /* Views */ = {
@@ -295,6 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6C8086C29DEB70B00F649A3 /* NetworkRequestable.swift in Sources */,
 				F60C25AB291FEA55005E5DE7 /* BusinessView.swift in Sources */,
 				F60C25B3291FEF5D005E5DE7 /* MoreView.swift in Sources */,
 				F60C25A4291FE501005E5DE7 /* LoaderModifier.swift in Sources */,
@@ -304,13 +328,17 @@
 				F6F5E6192917C814005B3C46 /* HomeView.swift in Sources */,
 				F6020FF42912B38400DDF2F4 /* iCoNewsApp.swift in Sources */,
 				F60C25AF291FEC2B005E5DE7 /* TechnologyView.swift in Sources */,
+				F6C8086E29DEB7A500F649A3 /* RequestModel.swift in Sources */,
 				F6F5E61B2917C840005B3C46 /* HomeViewModel.swift in Sources */,
 				F60C25B6291FF0A6005E5DE7 /* WorldView.swift in Sources */,
 				F6F5E61E2917CDB6005B3C46 /* SafariView.swift in Sources */,
 				F60C25A1291FE4E8005E5DE7 /* HudView.swift in Sources */,
 				F60C25A9291FE807005E5DE7 /* ArtsPresenter.swift in Sources */,
 				F60C259C291FE320005E5DE7 /* HomePageView.swift in Sources */,
+				F6C8087029DEB7E200F649A3 /* Service.swift in Sources */,
+				F6C8086A29DEB6E000F649A3 /* NetworkError.swift in Sources */,
 				F60C25B1291FEC38005E5DE7 /* TechnologyPresenter.swift in Sources */,
+				F6C8087229DEB8E000F649A3 /* Logger.swift in Sources */,
 				F60210032912B3BD00DDF2F4 /* RSSItemServerModel.swift in Sources */,
 				F60C259E291FE33D005E5DE7 /* HomePagePresenter.swift in Sources */,
 				F60C25AD291FEA63005E5DE7 /* BusinessPresenter.swift in Sources */,
