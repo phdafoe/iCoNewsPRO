@@ -1,0 +1,20 @@
+{
+    "status": true,
+    "time": 1680766672,
+    "format": "json",
+    "options": {
+        "offset": 0,
+        "limit": 1,
+        "totalrecords": 1
+    },
+    "data": [{
+        "id": 151,
+        "title": "Muere el exministro Josep Piqu\u00e9 a los 68 a\u00f1os",
+        "url": "https:\/\/www.elconfidencial.com\/espana\/2023-04-06\/muere-exministro-josep-pique_3606830\/",
+        "caption": "Espa\u00f1a",
+        "text": "",
+        "active": true,
+        "typedescription": "destacado"
+    }]
+}
+

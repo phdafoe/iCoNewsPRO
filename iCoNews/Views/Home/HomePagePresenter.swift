@@ -7,6 +7,10 @@
 
 import Foundation
 
+// Output
+protocol HomePagePresenterProtocol {
+    func setTitularHome(completion: Result<[TitularViewModel]?, NetworkError>)
+}
 
 class HomePagePresenter: ObservableObject {
     
@@ -23,3 +27,10 @@ class HomePagePresenter: ObservableObject {
         }
     }
 }
+
+extension HomePagePresenter: HomePagePresenterProtocol {
+    func setTitularHome(completion: Result<[TitularViewModel]?, NetworkError>) {
+        //
+    }
+}
+

@@ -10,13 +10,13 @@ import Combine
 
 public protocol Requestable {
     var requestTimeout: Float { get }
-    func request<T: Codable>(_ req: RequestModel) -> AnyPublisher<T,NetworkError>
+    func request<T: Decodable>(_ req: RequestModel, model: T.Type) -> AnyPublisher<T,NetworkError>
 }
 
 public class NetworkRequestable: Requestable {
     public var requestTimeout: Float = 30
     
-    public func request<T>(_ req: RequestModel) ->  AnyPublisher<T,NetworkError> where T: Codable {
+    public func request<T>(_ req: RequestModel, model: T.Type) ->  AnyPublisher<T,NetworkError> where T: Decodable {
         let sessionConfig = URLSessionConfiguration.default
         sessionConfig.timeoutIntervalForRequest = TimeInterval(req.requestTimeout ?? requestTimeout)
         

@@ -31,6 +31,9 @@
 		F6C8086E29DEB7A500F649A3 /* RequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8086D29DEB7A500F649A3 /* RequestModel.swift */; };
 		F6C8087029DEB7E200F649A3 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8086F29DEB7E200F649A3 /* Service.swift */; };
 		F6C8087229DEB8E000F649A3 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8087129DEB8E000F649A3 /* Logger.swift */; };
+		F6C8087629DEBB0A00F649A3 /* HomeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8087529DEBB0A00F649A3 /* HomeProvider.swift */; };
+		F6C8087929DEBEF000F649A3 /* TitularServerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8087829DEBEF000F649A3 /* TitularServerModel.swift */; };
+		F6C8087C29DEC1B900F649A3 /* TitularViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C8087B29DEC1B900F649A3 /* TitularViewModel.swift */; };
 		F6F5E6192917C814005B3C46 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F5E6182917C814005B3C46 /* HomeView.swift */; };
 		F6F5E61B2917C840005B3C46 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F5E61A2917C840005B3C46 /* HomeViewModel.swift */; };
 		F6F5E61E2917CDB6005B3C46 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F5E61D2917CDB6005B3C46 /* SafariView.swift */; };
@@ -62,6 +65,10 @@
 		F6C8086D29DEB7A500F649A3 /* RequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestModel.swift; sourceTree = "<group>"; };
 		F6C8086F29DEB7E200F649A3 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		F6C8087129DEB8E000F649A3 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		F6C8087429DEBA7900F649A3 /* Titular.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Titular.json; sourceTree = "<group>"; };
+		F6C8087529DEBB0A00F649A3 /* HomeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProvider.swift; sourceTree = "<group>"; };
+		F6C8087829DEBEF000F649A3 /* TitularServerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitularServerModel.swift; sourceTree = "<group>"; };
+		F6C8087B29DEC1B900F649A3 /* TitularViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitularViewModel.swift; sourceTree = "<group>"; };
 		F6F5E6182917C814005B3C46 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F6F5E61A2917C840005B3C46 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F6F5E61D2917CDB6005B3C46 /* SafariView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
@@ -97,6 +104,8 @@
 		F6020FF22912B38400DDF2F4 /* iCoNews */ = {
 			isa = PBXGroup;
 			children = (
+				F6C8087729DEBED300F649A3 /* New Group */,
+				F6C8087329DEBA6100F649A3 /* Resources */,
 				F6C8086829DEB6C900F649A3 /* ServiceLayer */,
 				F60C25A5291FE54F005E5DE7 /* Utils */,
 				F60C25A2291FE4F5005E5DE7 /* Modifiers */,
@@ -123,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				F60210022912B3BD00DDF2F4 /* RSSItemServerModel.swift */,
+				F6C8087A29DEC1AA00F649A3 /* Titular */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -216,6 +226,30 @@
 			path = ServiceLayer;
 			sourceTree = "<group>";
 		};
+		F6C8087329DEBA6100F649A3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F6C8087429DEBA7900F649A3 /* Titular.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F6C8087729DEBED300F649A3 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		F6C8087A29DEC1AA00F649A3 /* Titular */ = {
+			isa = PBXGroup;
+			children = (
+				F6C8087829DEBEF000F649A3 /* TitularServerModel.swift */,
+				F6C8087B29DEC1B900F649A3 /* TitularViewModel.swift */,
+			);
+			path = Titular;
+			sourceTree = "<group>";
+		};
 		F6F5E6162917C7F8005B3C46 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +270,7 @@
 			children = (
 				F60C259B291FE320005E5DE7 /* HomePageView.swift */,
 				F60C259D291FE33D005E5DE7 /* HomePagePresenter.swift */,
+				F6C8087529DEBB0A00F649A3 /* HomeProvider.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -324,11 +359,14 @@
 				F60C25A4291FE501005E5DE7 /* LoaderModifier.swift in Sources */,
 				F6020FF62912B38400DDF2F4 /* ContentView.swift in Sources */,
 				F60C25BA291FF103005E5DE7 /* WorldPresenter.swift in Sources */,
+				F6C8087C29DEC1B900F649A3 /* TitularViewModel.swift in Sources */,
 				F60C2599291FE2DA005E5DE7 /* ArtsView.swift in Sources */,
+				F6C8087629DEBB0A00F649A3 /* HomeProvider.swift in Sources */,
 				F6F5E6192917C814005B3C46 /* HomeView.swift in Sources */,
 				F6020FF42912B38400DDF2F4 /* iCoNewsApp.swift in Sources */,
 				F60C25AF291FEC2B005E5DE7 /* TechnologyView.swift in Sources */,
 				F6C8086E29DEB7A500F649A3 /* RequestModel.swift in Sources */,
+				F6C8087929DEBEF000F649A3 /* TitularServerModel.swift in Sources */,
 				F6F5E61B2917C840005B3C46 /* HomeViewModel.swift in Sources */,
 				F60C25B6291FF0A6005E5DE7 /* WorldView.swift in Sources */,
 				F6F5E61E2917CDB6005B3C46 /* SafariView.swift in Sources */,
