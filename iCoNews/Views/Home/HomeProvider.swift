@@ -9,13 +9,15 @@ import Foundation
 import Combine
 
 // Input
-protocol HomeProviderInputProtocol {
+protocol HomeProviderInputProtocol: BaseProviderInputProtocol {
     func fetchDataTitular()
 }
 
-final class HomeProvider {
+final class HomeProvider: BaseProvider {
     
-    let homeViewPresenter: HomePagePresenterProtocol = HomePagePresenter()
+    weak var viewModel: HomePagePresenterProtocol? {
+        super.baseViewModel as? HomePagePresenterProtocol
+    }
     let networkService: Requestable = NetworkRequestable()
     var cancellable: Set<AnyCancellable> = []
     
@@ -39,21 +41,47 @@ final class HomeProvider {
 
 extension HomeProvider: HomeProviderInputProtocol {
     func fetchDataTitular() {
-        networkService.request(RequestModel(service: Service), model: TitularServerModel.self)
+        networkService.request(RequestModel(service: HomeProviderService.homeProviderRequest), model: TitularServerModel.self)
             .sink { completion in
                 switch completion{
                 case .finished: break
                 case .failure(let error):
                     print(error)
-                    self.homeViewPresenter.setTitularHome(completion: .failure(error))
-                    //                self.interactor?.setInfoPopular(completionData: .failure(error))
+                    self.viewModel?.setTitularHome(completion: .failure(error))
                 }
             } receiveValue: { resultData in
-                self.homeViewPresenter.setTitularHome(completion: .success(self.transformDataResultNowPlayingToMoviesShowsModel(data: resultData)))
+                self.viewModel?.setTitularHome(completion: .success(self.transformDataResultNowPlayingToMoviesShowsModel(data: resultData.data)))
             }
             .store(in: &cancellable)
     }
 }
+
+enum HomeProviderService {
+    case homeProviderRequest
+}
+
+extension HomeProviderService: Service {
+    var baseURL: String {
+        return ""
+    }
+    
+    var path: String {
+        return "api.elconfidencial.com/service/home/ticker/1"
+    }
+    
+    var parameter: [URLQueryItem]{
+        return []
+    }
+
+    var headers: [String : String] {
+        return ["Content-Type": HeaderType.applicationJson.rawValue]
+    }
+
+    var method: HTTPMethod {
+        return .get
+    }
+}
+
 
 
 

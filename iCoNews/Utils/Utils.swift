@@ -7,9 +7,3 @@
 
 import Foundation
 
-
-enum ViewModelState: String {
-    case ok
-    case loading
-    case error
-}
